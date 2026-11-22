@@ -1,0 +1,15 @@
+{
+  "nodes": [
+    { "name": "node-1", "cpu_total": 8 },
+    { "name": "node-2", "cpu_total": 8 },
+    { "name": "node-3", "cpu_total": 4 }
+  ],
+  "pvs": [
+    { "name": "pv-n1-small-a", "node": "node-1", "capacity": 20 },
+    { "name": "pv-n1-small-b", "node": "node-1", "capacity": 20 },
+    { "name": "pv-n1-large",   "node": "node-1", "capacity": 200 },
+    { "name": "pv-n2-small-a", "node": "node-2", "capacity": 20 },
+    { "name": "pv-n2-large",   "node": "node-2", "capacity": 200 },
+    { "name": "pv-n3-small",   "node": "node-3", "capacity": 50 }
+  ]
+}

@@ -1,0 +1,14 @@
+services:
+  scheduler:
+    build: .
+    image: k8s-pv-scheduler-drill:latest
+    container_name: k8s-pv-scheduler
+    ports:
+      - "8000:8000"
+    volumes:
+      # 挂载可替换的节点/PV 清单；改文件后重启容器即生效，
+      # 也可运行期调用 POST /api/inventory 热替换。
+      - ./data/inventory.json:/app/data/inventory.json:ro
+    environment:
+      SCHED_INVENTORY: /app/data/inventory.json
+    restart: unless-stopped
